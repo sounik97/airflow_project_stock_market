@@ -28,9 +28,9 @@ if __name__ == '__main__':
             .config("fs.s3a.endpoint", os.getenv("ENDPOINT", "http://host.docker.internal:9000")) \
             .config("fs.s3a.connection.ssl.enabled", "false") \
             .config("fs.s3a.path.style.access", "true") \
-            .config("fs.s3a.attempts.maximum", "1") \
-            .config("fs.s3a.connection.establish.timeout", "5000") \
-            .config("fs.s3a.connection.timeout", "10000") \
+            .config("fs.s3a.attempts.maximum", "2") \
+            .config("fs.s3a.connection.establish.timeout", "50000") \
+            .config("fs.s3a.connection.timeout", "100000") \
             .getOrCreate()
 
         # Read a JSON file from an MinIO bucket using the access key, secret key, 
